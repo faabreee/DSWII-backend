@@ -45,45 +45,30 @@ private ProductoService prodService;
         }
     }
 
-
-
     @GetMapping
-public ResponseEntity<List<Solicitud> > listarSolicitud(
-/*
- * @RequestParam(required = false) @DateTimeFormat(pattern="yyyy-MM-dd") Date
- * date
- */){
-	return ResponseEntity.ok(service.listarSolicitud());
-}
-
-
-/**public JavaMailSender getJavaMailSender() {
+    public ResponseEntity<List<Solicitud> > listarSolicitud(){
+    //@RequestParam(required = false) @DateTimeFormat(pattern="yyyy-MM-dd") Date date
+    return ResponseEntity.ok(service.listarSolicitud());
+    }
+    /**public JavaMailSender getJavaMailSender() {
     JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
     mailSender.setHost("smtp-mail.outlook.com");
     mailSender.setPort(587);
-    
     mailSender.setUsername("farmastockpe@outlook.com");
     mailSender.setPassword("holamundo01");
-    
     Properties props = mailSender.getJavaMailProperties();
     props.put("mail.transport.protocol", "smtp");
     props.put("mail.smtp.auth", "true");
     props.put("mail.smtp.starttls.enable", "true");
     props.put("mail.debug", "true");
-    
     return mailSender;
-}
-
-public void sendSimpleMessage(String to, String subject, String text) {
-	
+    }
+    public void sendSimpleMessage(String to, String subject, String text) {
     SimpleMailMessage message = new SimpleMailMessage(); 
     message.setFrom("farmastockpe@outlook.com");
     message.setTo(to); 
     message.setSubject(subject); 
     message.setText(text);
-    
-   getJavaMailSender().send(message);
-    
-}**/
-
+    getJavaMailSender().send(message);
+    }**/
 }

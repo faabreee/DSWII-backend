@@ -12,18 +12,14 @@ public class ProveedorService {
 	private IProveedorRepository repoProvee;
 	
 	public List<Proveedor>listarPorveedor(){
-		
 		return repoProvee.findAll();
 	}
 	
 	public Proveedor crearProveedor(Proveedor p) {
-		
-		
 		return repoProvee.save(p);
 	}
 	
 	public Proveedor actualizarProveedor(Proveedor p) {
-		
 		return repoProvee.save(p);
 	}
 	
@@ -33,7 +29,6 @@ public class ProveedorService {
 	public List<Proveedor> buscarProveedor(String name) {
 		return repoProvee.findByName(name);
 	}
-	
 	public void borrarProveedor(int id) {
 		repoProvee.deleteById(id);
 	}

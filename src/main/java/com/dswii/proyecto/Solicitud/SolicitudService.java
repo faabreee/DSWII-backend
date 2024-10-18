@@ -13,18 +13,14 @@ public class SolicitudService {
 	private ISolicitudRepository reposoli;
 	
 	public Solicitud guardarSolicitud(Solicitud s) {
-		
 		return reposoli.save(s);
-		
 	}
 	
 	public List<Solicitud>listarSolicitud(){
-		
 		return reposoli.findAll();
 	}
 	
 	public Solicitud obtenerSolicitud(int id) {
 		return reposoli.findById(id).get();
 	}
-
 }

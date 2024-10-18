@@ -25,7 +25,6 @@ public class UserService {
                 .build();
 
         userRepository.updateUser(user.id, user.firstname, user.lastname, user.phone);
-
         return new UserResponse("El usuario se registró satisfactoriamente");
     }
 

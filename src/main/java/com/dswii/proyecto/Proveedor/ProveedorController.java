@@ -31,12 +31,10 @@ public class ProveedorController {
 	
 	@GetMapping("{id}")
 	public ResponseEntity<Proveedor>  obtenerProveedor(@PathVariable int id) {
-		
 		return ResponseEntity.ok(servicio.obtenerProveedor(id));
 	}
 	@GetMapping("buscar")
 	public ResponseEntity<List<Proveedor>>  buscarProveedor(@RequestParam String name) {
-		
 		return ResponseEntity.ok(servicio.buscarProveedor(name));
 	}
 	
@@ -48,10 +46,7 @@ public class ProveedorController {
 
 	
 	@PutMapping("{id}")
-	public ResponseEntity<?> actualizarProveedo(
-			@PathVariable int id,
-			@RequestBody Proveedor prov){
-		
+	public ResponseEntity<?> actualizarProveedo(@PathVariable int id, @RequestBody Proveedor prov){
 		Proveedor p = servicio.obtenerProveedor(id);
 		p.setRuc(prov.getRuc());
 		p.setNomProvee(prov.getDireccion());

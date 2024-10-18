@@ -5,7 +5,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ISolicitudRepository  extends JpaRepository<Solicitud, Integer>{
-	
-	
-
 }

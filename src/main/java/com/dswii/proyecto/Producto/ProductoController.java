@@ -46,23 +46,20 @@ public class ProductoController {
 		return servicio.obtenerProductoporName(name);
 	}
 	
-		@PutMapping("/{id}")
-		public ResponseEntity<Producto> actualizarProducto(
-				@PathVariable Integer id,
-				@RequestBody Producto producto) {
-			Producto p = servicio.obtenerProducto(id);
-			p.setCodPro(producto.getCodPro());
-			p.setNomPro(producto.getNomPro());
-			p.setProveedor(producto.getProveedor());
-			p.setStock(producto.getStock());
-			p.setPrecio(producto.getPrecio());
-			p.setFechaCompra(producto.getFechaCompra());
-			servicio.actualizarProducto(p);
-			return new ResponseEntity<>(p, HttpStatus.CREATED);
-			
-		}	
-		@DeleteMapping("/{id}")
-		public String borrarProducto(@PathVariable Integer id) {
+	@PutMapping("/{id}")
+	public ResponseEntity<Producto> actualizarProducto(@PathVariable Integer id, @RequestBody Producto producto) {
+		Producto p = servicio.obtenerProducto(id);
+		p.setCodPro(producto.getCodPro());
+		p.setNomPro(producto.getNomPro());
+		p.setProveedor(producto.getProveedor());
+		p.setStock(producto.getStock());
+		p.setPrecio(producto.getPrecio());
+		p.setFechaCompra(producto.getFechaCompra());
+		servicio.actualizarProducto(p);
+		return new ResponseEntity<>(p, HttpStatus.CREATED);
+	}
+	@DeleteMapping("/{id}")
+	public String borrarProducto(@PathVariable Integer id) {
 			return servicio.borrarProducto(id);
 		}
 }
