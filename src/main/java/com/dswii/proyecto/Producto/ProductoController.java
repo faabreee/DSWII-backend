@@ -59,7 +59,8 @@ public class ProductoController {
 		return new ResponseEntity<>(p, HttpStatus.CREATED);
 	}
 	@DeleteMapping("/{id}")
-	public String borrarProducto(@PathVariable Integer id) {
-			return servicio.borrarProducto(id);
-		}
+	public ResponseEntity<Void> borrarProducto(@PathVariable Integer id) {
+		servicio.borrarProducto(id);
+		return ResponseEntity.noContent().build();
+	}
 }
