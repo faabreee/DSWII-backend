@@ -49,7 +49,7 @@ public class ProveedorController {
 	public ResponseEntity<?> actualizarProveedo(@PathVariable int id, @RequestBody Proveedor prov){
 		Proveedor p = servicio.obtenerProveedor(id);
 		p.setRuc(prov.getRuc());
-		p.setNomProvee(prov.getDireccion());
+		p.setNomProvee(prov.getNomProvee());
 		p.setEmail(prov.getEmail());
 		p.setTelefono(prov.getTelefono());
 		p.setDireccion(prov.getDireccion());
